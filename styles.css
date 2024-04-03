@@ -53,6 +53,10 @@ a {
   text-decoration: none;
 }
 
+.key-test-options{
+  padding-right: 50px;
+}
+
 .keyboard {
   margin: 5px auto 0;
   background-color: var(--dark);

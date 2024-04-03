@@ -41,3 +41,11 @@ window.addEventListener('mousedown', function(event) {
     }
   });
 });
+
+function keyboardTest(){
+
+}
+
+function typingTest(){
+
+}
