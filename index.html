@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyPlus</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1><a href="https://jarierca.github.io/KeyPlus/" class="title">KeyPlus</a></h1>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div class="key-pressed-container"><div class="key-pressed-list"></div></div>
+      <div class="keyboard">
+        <div class="keys">
+          <div class="row-1">
+            <div class="key mr1" data-key="27"><p>Esc</p></div>
+            <div class="key" data-key="112"><p>F1</p></div>
+            <div class="key" data-key="113"><p>F2</p></div>
+            <div class="key" data-key="114"><p>F3</p></div>
+            <div class="key mr2" data-key="115"><p>F4</p></div>
+            <div class="key" data-key="116"><p>F5</p></div>
+            <div class="key" data-key="117"><p>F6</p></div>
+            <div class="key" data-key="118"><p>F7</p></div>
+            <div class="key mr2" data-key="119"><p>F8</p></div>
+            <div class="key" data-key="120"><p>F9</p></div>
+            <div class="key" data-key="121"><p>F10</p></div>
+            <div class="key" data-key="122"><p>F11</p></div>
+            <div class="key" data-key="123"><p>F12</p></div>
+            <div class="key mr3 fz14 double_row" data-key="44"><p>Prt<br>Sc</p></div>
+            <div class="key fz14 double_row" data-key="145"><p>Scr<br>Lk</p></div>
+            <div class="key fz14 margin_for_fz14" data-key="19"><p>Pause</p></div>
+          </div>
+          <div class="row-2">
+            <div class="key double_row_sym" data-key="192"><p>~<br>`</p></div>
+            <div class="key" data-key="49"><p>1</p></div>
+            <div class="key" data-key="50"><p>2</p></div>
+            <div class="key" data-key="51"><p>3</p></div>
+            <div class="key" data-key="52"><p>4</p></div>
+            <div class="key" data-key="53"><p>5</p></div>
+            <div class="key" data-key="54"><p>6</p></div>
+            <div class="key" data-key="55"><p>7</p></div>
+            <div class="key" data-key="56"><p>8</p></div>
+            <div class="key" data-key="57"><p>9</p></div>
+            <div class="key" data-key="48"><p>0</p></div>
+            <div class="key minus_sym" data-key="189"><p>_<br>-</p></div>
+            <div class="key equal_sym" data-key="187"><p>+<br>=</p></div>
+            <div class="key w1 fz14 right_side" data-key="8"><p>Backspace</p></div>
+            <div class="key mr3 fz14 margin_for_fz14" data-key="45"><p>Ins</p></div>
+            <div class="key" data-key="36"><p>Home</p></div>
+            <div class="key" data-key="33"><p>Pg<br>Up</p></div>
+            <div class="key fz14 double_row" data-key="144"><p>Num<br>Lock</p></div>
+            <div class="key num_division" data-key="111"><p>/</p></div>
+            <div class="key num_multiply" data-key="106"><p>*</p></div>
+            <div class="key num_minus" data-key="109"><p>-</p></div>
+          </div>
+          <div class="row-3">
+            <div class="key w2 fz14 left_side" data-key="9"><p>Tab</p></div>
+            <div class="key" data-key="81"><p>Q</p></div>
+            <div class="key" data-key="87"><p>W</p></div>
+            <div class="key" data-key="69"><p>E</p></div>
+            <div class="key" data-key="82"><p>R</p></div>
+            <div class="key" data-key="84"><p>T</p></div>
+            <div class="key" data-key="89"><p>Y</p></div>
+            <div class="key" data-key="85"><p>U</p></div>
+            <div class="key" data-key="73"><p>I</p></div>
+            <div class="key" data-key="79"><p>O</p></div>
+            <div class="key" data-key="80"><p>P</p></div>
+            <div class="key double_row_sym_center" data-key="219"><p>{<br>[</p></div>
+            <div class="key double_row_sym_center" data-key="221"><p>}<br>]</p></div>
+            <div class="key w3 right_side backslash" data-key="220"><p>|<br>\</p></div>
+            <div class="key fz14 margin_for_fz14 mr3" data-key="46"><p>Del</p></div>
+            <div class="key" data-key="35"><p>End</p></div>
+            <div class="key" data-key="34"><p>Pg<br>Dn</p></div>
+            <div class="key" data-key="103"><p>7</p></div>
+            <div class="key" data-key="104"><p>8</p></div>
+            <div class="key" data-key="105"><p>9</p></div>
+            <div class="key h1 num_enter" data-key="107"><p>+</p></div>
+          </div>
+          <div class="row-4">
+            <div class="key w4 fz14 left_side" data-key="20"><p>Caps</p></div>
+            <div class="key" data-key="65"><p>A</p></div>
+            <div class="key" data-key="83"><p>S</p></div>
+            <div class="key" data-key="68"><p>D</p></div>
+            <div class="key" data-key="70"><p>F</p></div>
+            <div class="key" data-key="71"><p>G</p></div>
+            <div class="key" data-key="72"><p>H</p></div>
+            <div class="key" data-key="74"><p>J</p></div>
+            <div class="key" data-key="75"><p>K</p></div>
+            <div class="key" data-key="76"><p>L</p></div>
+            <div class="key double_row_sym" data-key="186"><p>:<br>;</p></div>
+            <div class="key double_row_sym2" data-key="222"><p>"<br>'</p></div>
+            <div class="key w5 right_side" data-key="13"><p>Enter</p></div>
+            <div class="key w0 fz14 margin_for_fz14 mr3"><p></p></div>
+            <div class="key w0 fz14"><p></p></div>
+            <div class="key w0 fz14"><p></p></div>
+            <div class="key" data-key="100"><p>4</p></div>
+            <div class="key" data-key="101"><p>5</p></div>
+            <div class="key" data-key="102"><p>6</p></div>
+          </div>
+          <div class="row-5">
+            <div class="key w6 fz14 left_side" data-key="16"><p>Shift</p></div>
+            <div class="key" data-key="90"><p>Z</p></div>
+            <div class="key" data-key="88"><p>X</p></div>
+            <div class="key" data-key="67"><p>C</p></div>
+            <div class="key" data-key="86"><p>V</p></div>
+            <div class="key" data-key="66"><p>B</p></div>
+            <div class="key" data-key="78"><p>N</p></div>
+            <div class="key" data-key="77"><p>M</p></div>
+            <div class="key double_row_sym3" data-key="188"><p>&lt;<br>,</p></div>
+            <div class="key double_row_sym3" data-key="190"><p>&gt;<br>.</p></div>
+            <div class="key double_row_sym" data-key="191"><p>?<br>/</p></div>
+            <div class="key w7 fz14 right_side" data-key="16"><p>Shift</p></div>
+            <div class="key w0 fz14 margin_for_fz14 mr3"><p></p></div>
+            <div class="key" data-key="38"><p>↑</p></div>
+            <div class="key w0"><p></p></div>
+            <div class="key" data-key="97"><p>1</p></div>
+            <div class="key" data-key="98"><p>2</p></div>
+            <div class="key" data-key="99"><p>3</p></div>
+            <div class="key h1 fz14 num_enter" data-key="13"><p>Enter</p></div>
+          </div>
+          <div class="row-6">
+            <div class="key w8 fz14 left_side" data-key="17"><p>Ctrl</p></div>
+            <div class="key w8 win" data-key="91"><p>Win</p></div>
+            <div class="key w8 fz14 margin_for_fz14" data-key="18"><p>Alt</p></div>
+            <div class="key w9" data-key="32"><p></p></div>
+            <div class="key w8 fz14 margin_for_fz14" data-key="18"><p>Alt</p></div>
+            <div class="key w8 win" data-key="91"><p>Win</p></div>
+            <div class="key w8 contextmenu" data-key="93"><p>Menu</p></div>
+            <div class="key w8 right_side" data-key="17"><p>Ctrl</p></div>
+            <div class="key fz14 margin_for_fz14 mr3" data-key="37"><p>←</p></div>
+            <div class="key" data-key="40"><p>↓</p></div>
+            <div class="key" data-key="39"><p>→</p></div>
+            <div class="key w10 num0" data-key="96"><p>0</p></div>
+            <div class="key num_dot" data-key="110"><p>.</p></div>
+          </div>
+          <div class="row-7">
+            <div class="key mousebutton mouseleft" data-key="0"><p></p></div>
+            <div class="key mousebutton mousethird" data-key="1"><p></p></div>
+            <div class="key mousebutton mouseright" data-key="2"><p></p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p>Develop by <a href="https://github.com/jarierca/KeyPlus" target="_blank">jarierca</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+

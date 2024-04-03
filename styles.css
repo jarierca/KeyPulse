@@ -1,0 +1,225 @@
+:root {
+  --dark: rgb(38, 42, 43);
+  --dark-header: rgb(21, 22, 23);
+  --light-green: rgb(97, 186, 101);
+  --green: rgb(55, 128, 58);
+  --white: rgb(216, 212, 207);
+}
+
+body{
+  background-color: var(--dark);
+  font-family: Arial, monospace;
+  font-size: 16px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+header, footer {
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  text-align: left;
+}
+
+main {
+  margin-bottom: 100px;  
+  flex: 1;
+}
+
+footer {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav h1 {
+  margin: 0;
+}
+
+.title {
+  color: rgb(232, 230, 227) !important;
+  text-decoration-color: currentcolor !important;
+}
+
+a {
+  color: var(--light-green);
+  text-decoration: none;
+}
+
+.keyboard {
+  margin: 5px auto 0;
+  background-color: var(--dark);
+  color: var(white);
+  border-radius: 6px;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  position: relative;
+
+}
+
+.container {
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  width: 82%;
+}
+
+.row-7 {
+  text-align: center;
+}
+
+.keys {
+  padding: 0 7px;
+  min-height: 430px;
+}
+
+.key {
+  border: 1px solid #fff;
+  border-radius: 6px;
+  color: #f6f6f6;
+  display: inline-block;
+  font-size: 16px;
+  height: 55px;
+  text-align: center;
+  vertical-align: top;
+  width: 55px;
+  margin: 5px 3.5px;
+  letter-spacing: 1.2px;
+  line-height: 1.15;
+  cursor: pointer;
+}
+
+.key.active {
+  background-color: var(--light-green);
+  color: var(--dark-header);
+}
+
+.key-pressed-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  max-width: 100%;
+  background-color: var(--dark-header);
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+
+.key-pressed-list {
+  min-height: 20px;
+  font-size: 16px;
+  overflow: hidden;
+  text-align: right;
+  padding: 6px 6.5px;
+  position: relative;
+}
+
+.key-pressed-list > span:first-child {
+  border: 2.5px solid var(--light-green);
+  color: var(--light-green);
+}
+
+.key-pressed {
+  border: 1px solid var(--green);
+  border-radius: 10px;
+  color: var(--green);
+  padding: 5px 6px;
+  margin: 5px;
+}
+
+.key.h1 {
+  position:absolute;
+  height: 122px;
+  margin-left: 8px;
+}
+
+.key.mr1 {
+  margin-right: 53.5px;
+}
+
+.key.mr2 {
+  margin-right: 41px;
+}
+
+.key.mr3 {
+  margin-right: 10.5px;
+  margin-left: 10.5px;
+}
+
+.key.mr4 {
+  margin-left: 55px;
+}
+
+.key.fz14 {
+  font-size: 14px;
+}
+
+.key.w0 {
+ border: 1px solid transparent;
+}
+
+.key.w1 {
+  width: 113px;
+}
+
+.key.w3 {
+  width: 81px;
+}
+
+.key.w2 {
+  width: 87px;
+}
+
+.key.w4 {
+  width: 107px;
+}
+
+.key.w5 {
+  width: 130px;
+}
+
+.key.w6 {
+  width: 136px;
+}
+
+.key.w7 {
+  width: 170px;
+}
+
+.key.w8 {
+  width: 68.5px;
+}
+
+.key.w9 {
+  width: 433px;
+}
+
+.key.w10 {
+  width: 125px;
+}
+
+.key.mousebutton {
+  width: 95px;
+  border-radius: 0;
+  height: 35px;
+  margin-top: 20px;
+}
+
+.key.mouseleft {
+  border-radius: 0 0 0 10px;
+}
+
+.key.mousethird {
+  width: 13px;
+}
+
+.key.mouseright {
+  border-radius: 0 0 10px 0;
+}
