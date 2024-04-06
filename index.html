@@ -15,11 +15,13 @@
       <span>
         <a href="#" class="key-test-options" onclick="keyboardTest()"> Keyboard Test</a>
         <a href="#" class="key-test-options" onclick="typingTest()"> Typing Test</a>
+        <a class="a-btn-outline" onclick="resetKeys()" title="Reset Key Test">Reset</a>
+        <a id="btn-sound" class="a-btn-outline" onclick="toggleSound()" title="Toggle Mute Sound">🔊</a>
       </span>
     </nav>
   </header>
   <main>
-    <div class="container">
+    <div class="keyboard-container">
       <div class="key-pressed-container"><div class="key-pressed-list"></div></div>
       <div class="keyboard">
         <div class="keys">
@@ -58,8 +60,8 @@
             <div class="key w1 fz14 right_side" data-key="8"><p>Backspace</p></div>
             <div class="key mr3 fz14 margin_for_fz14" data-key="45"><p>Ins</p></div>
             <div class="key" data-key="36"><p>Home</p></div>
-            <div class="key" data-key="33"><p>Pg<br>Up</p></div>
-            <div class="key fz14 double_row" data-key="144"><p>Num<br>Lock</p></div>
+            <div class="key right_side" data-key="33"><p>Pg<br>Up</p></div>
+            <div class="key mr3 fz14 margin_for_fz14" data-key="144"><p>Num<br>Lock</p></div>
             <div class="key num_division" data-key="111"><p>/</p></div>
             <div class="key num_multiply" data-key="106"><p>*</p></div>
             <div class="key num_minus" data-key="109"><p>-</p></div>
@@ -81,8 +83,8 @@
             <div class="key w3 right_side backslash" data-key="220"><p>|<br>\</p></div>
             <div class="key fz14 margin_for_fz14 mr3" data-key="46"><p>Del</p></div>
             <div class="key" data-key="35"><p>End</p></div>
-            <div class="key" data-key="34"><p>Pg<br>Dn</p></div>
-            <div class="key" data-key="103"><p>7</p></div>
+            <div class="key right_side" data-key="34"><p>Pg<br>Dn</p></div>
+            <div class="key mr3 fz14 margin_for_fz14" data-key="103"><p>7</p></div>
             <div class="key" data-key="104"><p>8</p></div>
             <div class="key" data-key="105"><p>9</p></div>
             <div class="key h1 num_enter" data-key="107"><p>+</p></div>
@@ -104,7 +106,7 @@
             <div class="key w0 fz14 margin_for_fz14 mr3"><p></p></div>
             <div class="key w0 fz14"><p></p></div>
             <div class="key w0 fz14"><p></p></div>
-            <div class="key" data-key="100"><p>4</p></div>
+            <div class="key mr3 fz14 margin_for_fz14" data-key="100"><p>4</p></div>
             <div class="key" data-key="101"><p>5</p></div>
             <div class="key" data-key="102"><p>6</p></div>
           </div>
@@ -124,7 +126,7 @@
             <div class="key w0 fz14 margin_for_fz14 mr3"><p></p></div>
             <div class="key" data-key="38"><p>↑</p></div>
             <div class="key w0"><p></p></div>
-            <div class="key" data-key="97"><p>1</p></div>
+            <div class="key mr3 fz14 margin_for_fz14" data-key="97"><p>1</p></div>
             <div class="key" data-key="98"><p>2</p></div>
             <div class="key" data-key="99"><p>3</p></div>
             <div class="key h1 fz14 num_enter" data-key="13"><p>Enter</p></div>
@@ -141,7 +143,7 @@
             <div class="key fz14 margin_for_fz14 mr3" data-key="37"><p>←</p></div>
             <div class="key" data-key="40"><p>↓</p></div>
             <div class="key" data-key="39"><p>→</p></div>
-            <div class="key w10 num0" data-key="96"><p>0</p></div>
+            <div class="key mr3 fz14 margin_for_fz14 w10 num0" data-key="96"><p>0</p></div>
             <div class="key num_dot" data-key="110"><p>.</p></div>
           </div>
           <div class="row-7">
@@ -152,12 +154,36 @@
         </div>
       </div>
     </div>
+    <div class="type-test-container">
+      <div id="typing">
+        <div id="time">30</div>
+        <div id="words">En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados6, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda</p>
+        <input id="typing-input" type="text" autofocus>
+        <button id="reload-button">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" />
+            <path d="M20 4v5h-5" />
+          </svg>
+        </button>
+      </div>
+      <div id="results">
+        <h2>WPM</h2>
+        <h3 id="results-wpm"></h3>
+
+        <h2>Accuracy</h2>
+        <h3 id="results-accuracy"></h3>
+      </div>
+    </div>
+    <div id="small-screen-message">The screen is too small to display the content properly.</div>
   </main>
   <footer>
     <p>Develop by <a href="https://github.com/jarierca/KeyPlus" target="_blank">jarierca</a></p>
   </footer>
 
   <script src="script.js"></script>
+
 </body>
 </html>
 
