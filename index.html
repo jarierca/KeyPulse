@@ -10,12 +10,14 @@
 <body>
   <header>
     <nav>
-      <h1><a href="https://jarierca.github.io/KeyPlus/" class="title">KeyPlus</a></h1>
-      <span></span>
-      <span>
+      <span id="title">
+        <h1><a href="https://jarierca.github.io/KeyPlus/" class="title">KeyPlus</a></h1>
         <a href="#" class="key-test-options" onclick="keyboardTest()"> Keyboard Test</a>
         <a href="#" class="key-test-options" onclick="typingTest()"> Typing Test</a>
-        <a class="a-btn-outline" onclick="resetKeys()" title="Reset Key Test">Reset</a>
+      </span> 
+      <span></span>
+      <span>
+        <a id="reset-kbd" class="a-btn-outline" onclick="resetKeys()" title="Reset Key Test">Reset</a>
         <a id="btn-sound" class="a-btn-outline" onclick="toggleSound()" title="Toggle Mute Sound">🔊</a>
       </span>
     </nav>
@@ -156,24 +158,37 @@
     </div>
     <div class="type-test-container">
       <div id="typing">
-        <div id="time">30</div>
-        <div id="words">En un lugar de la Mancha, de cuyo nombre no quiero acordarme, no ha mucho tiempo que vivía un hidalgo de los de lanza en astillero, adarga antigua, rocín flaco y galgo corredor. Una olla de algo más vaca que carnero, salpicón las más noches, duelos y quebrantos los sábados6, lantejas los viernes, algún palomino de añadidura los domingos, consumían las tres partes de su hacienda</p>
-        <input id="typing-input" type="text" autofocus>
-        <button id="reload-button">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-            stroke-linecap="round" stroke-linejoin="round">
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" />
-            <path d="M20 4v5h-5" />
-          </svg>
-        </button>
+        <div id="words-container"></div>
+        <div class="input-container">
+          <div class="input-row">
+            <div id="time">0</div>
+            <input id="typing-input" type="text" autofocus>
+            <button id="reload-button" onclick="loadTipingTest()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" />
+                <path d="M20 4v5h-5" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
       <div id="results">
         <h2>WPM</h2>
         <h3 id="results-wpm"></h3>
 
+        <h2>Keystrokes</h2>
+        <h3 id="results-keystrokes"></h3>
+
         <h2>Accuracy</h2>
         <h3 id="results-accuracy"></h3>
+
+        <h2>Correct words</h2>
+        <h3 id="results-correct"></h3>
+
+        <h2>Wrong words</h2>
+        <h3 id="results-wrong"></h3>
       </div>
     </div>
     <div id="small-screen-message">The screen is too small to display the content properly.</div>
