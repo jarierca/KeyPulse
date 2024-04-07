@@ -19,7 +19,7 @@
       <span>
         <a id="reset-kbd" class="a-btn-outline" onclick="resetKeys()" title="Reset Key Test">Reset</a>
         <a id="btn-sound" class="a-btn-outline" onclick="toggleSound()" title="Toggle Mute Sound">🔊</a>
-        <span>
+        <span id="language-span">
           <label for="language">Choose a language:</label>
           <select name="language" id="typing-test-language" onchange="loadTypingTest()">
             <option value="en" default>English (EN)</option>
@@ -170,7 +170,7 @@
           <div class="input-row">
             <div id="time">0</div>
             <input id="typing-input" type="text" autofocus>
-            <button id="reload-button" onclick="loadTypingTest()">
+            <button id="reload-button" onclick="typingTest()">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" />

@@ -314,20 +314,21 @@ a {
   white-space: wrap;
   text-align: left;
   margin: 5px 15% 40px 15%;
-  padding: 0px 15px ;
-  overflow: hidden;
-  height: 155px;
+  padding: 0px 15px 5px 15px;
+/*  overflow: hidden;
+  height: 155px;*/
   border-radius: 8px;
   user-select: none;
   font-size: 2em;
-  line-height: 1.6em;
+/*  line-height: 1.6em;*/
   border: 1px solid var(--white);
   color: var(--grey);
 }
 
 word{
-  padding: 5px;
-  font-size: 32px;
+/*  padding: 5px;
+  font-size: 32px;*/
+  font-size: 24px;
   border-bottom: 1.5px solid transparent;
   transition: border-color 0.3s ease-in-out;
   margin: 0px 7px;
@@ -412,6 +413,10 @@ input, button {
 #typing-test-language{
   border-radius: 10px;
   color: var(--light-green);
+}
+
+#language-span{
+  display: none;
 }
 
 @media screen and (max-width: 1600px) {

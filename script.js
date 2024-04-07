@@ -27,9 +27,36 @@ window.addEventListener('load', function() {
   const storedSoundEnabled = localStorage.getItem("soundEnabled");
   soundEnabled = storedSoundEnabled === "true";
   toggleSoundButton.textContent = soundEnabled ? "🔊" : "🔇";
-typingTest();
+  loadView();
 
 });
+
+function loadView() {
+  var view = localStorage.getItem("view");
+  if (view === "kbd" || view === null) {
+    keyboardTest();
+
+  } else {
+    typingTest();
+    
+  }
+}
+
+function keyboardTest(){
+  const kybdContainer = document.querySelector(".keyboard-container");
+  const typeContainer = document.querySelector(".type-test-container");
+
+  kybdContainer.style.display = "";
+  typeContainer.style.display = "none";
+
+  keyboadDetectionEnabled = true;
+
+  document.getElementById("btn-sound").style.display = "";
+  document.getElementById("reset-kbd").style.display = "";
+    document.getElementById("language-span").style.display = "none";
+
+  localStorage.setItem("view", "kbd");
+}
 
 window.addEventListener('keydown', function(event) {
   keys.forEach(key => {
@@ -134,19 +161,6 @@ function resetKeys(){
   keyPressed.innerHTML = ""; 
 }
 
-function keyboardTest(){
-  const kybdContainer = document.querySelector(".keyboard-container");
-  const typeContainer = document.querySelector(".type-test-container");
-
-  kybdContainer.style.display = "";
-  typeContainer.style.display = "none";
-
-  keyboadDetectionEnabled = true;
-
-  document.getElementById("btn-sound").style.display = "";
-  document.getElementById("reset-kbd").style.display = "";
-}
-
 function typingTest(){
   const kybdContainer = document.querySelector(".keyboard-container");
   const typeContainer = document.querySelector(".type-test-container");
@@ -158,7 +172,10 @@ function typingTest(){
 
   document.getElementById("btn-sound").style.display = "none";
   document.getElementById("reset-kbd").style.display = "none";
-  
+  document.getElementById("language-span").style.display = "block";  
+
+  localStorage.setItem("view", "type-test");
+
   loadTypingTest();
 }
 
@@ -180,7 +197,7 @@ function loadTypingTest() {
 
   languageWords = language === 'en' ? words_en: words_es ;
 
-  words = languageWords.toSorted(() => Math.random() - 0.5).slice(0, 50);
+  words = languageWords.toSorted(() => Math.random() - 0.5).slice(0, 100);
   wordsContainer.innerHTML = words.map((word, index) => {
       const letters = word.toLowerCase().split('')
 
