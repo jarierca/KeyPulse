@@ -377,6 +377,7 @@ letter {
 
 #typing-input {
   font-size: 32px;
+  background-color: var(--dark);
 }
 
 #reload-button {
@@ -386,6 +387,7 @@ letter {
   padding: 5px;
   border-radius: 5px;
   cursor: pointer;
+  color: white;
 }
 
 .input-row {
@@ -404,6 +406,7 @@ input, button {
   border-radius: 8px;
   border: 2px solid #ccc;
   padding: 0px 12px;
+  color: var(--white);
 
   &:focus {
     outline: none; 
@@ -413,6 +416,7 @@ input, button {
 #typing-test-language{
   border-radius: 10px;
   color: var(--light-green);
+  background-color: var(--dark);
 }
 
 #language-span{
