@@ -19,6 +19,13 @@
       <span>
         <a id="reset-kbd" class="a-btn-outline" onclick="resetKeys()" title="Reset Key Test">Reset</a>
         <a id="btn-sound" class="a-btn-outline" onclick="toggleSound()" title="Toggle Mute Sound">🔊</a>
+        <span>
+          <label for="language">Choose a language:</label>
+          <select name="language" id="typing-test-language" onchange="loadTypingTest()">
+            <option value="en" default>English (EN)</option>
+            <option value="es">Spanish (ESP)</option>
+          </select> 
+        </span>
       </span>
     </nav>
   </header>
@@ -163,9 +170,8 @@
           <div class="input-row">
             <div id="time">0</div>
             <input id="typing-input" type="text" autofocus>
-            <button id="reload-button" onclick="loadTipingTest()">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
-                stroke-linecap="round" stroke-linejoin="round">
+            <button id="reload-button" onclick="loadTypingTest()">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <path d="M19.933 13.041a8 8 0 1 1 -9.925 -8.788c3.899 -1 7.935 1.007 9.425 4.747" />
                 <path d="M20 4v5h-5" />
@@ -175,20 +181,26 @@
         </div>
       </div>
       <div id="results">
-        <h2>WPM</h2>
-        <h3 id="results-wpm"></h3>
-
-        <h2>Keystrokes</h2>
-        <h3 id="results-keystrokes"></h3>
-
-        <h2>Accuracy</h2>
-        <h3 id="results-accuracy"></h3>
-
-        <h2>Correct words</h2>
-        <h3 id="results-correct"></h3>
-
-        <h2>Wrong words</h2>
-        <h3 id="results-wrong"></h3>
+        <span>
+          <h2>WPM</h2>
+          <h3 id="results-wpm"></h3>
+        </span>
+        <span>
+          <h2>Keystrokes</h2>
+          <h3 id="results-keystrokes"></h3>
+        </span>
+        <span>
+          <h2>Accuracy</h2>
+          <h3 id="results-accuracy"></h3>
+        </span>
+        <span>
+          <h2>Correct words</h2>
+          <h3 id="results-correct"></h3>
+        </span>
+        <span>
+          <h2>Wrong words</h2>
+          <h3 id="results-wrong"></h3>
+        </span>
       </div>
     </div>
     <div id="small-screen-message">The screen is too small to display the content properly.</div>
@@ -197,6 +209,7 @@
     <p>Develop by <a href="https://github.com/jarierca/KeyPlus" target="_blank">jarierca</a></p>
   </footer>
 
+  <script src="data.js"></script>
   <script src="script.js"></script>
 
 </body>

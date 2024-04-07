@@ -7,7 +7,7 @@
   --white: rgb(216, 212, 207);
   --red: #ca4754;
   --white: #FFFF;
-  --grey: ##e8e6e3;
+  --grey: #646669;
 }
 
 body{
@@ -296,6 +296,18 @@ a {
 #results {
   color: var(--green);
   display: none;
+  justify-content: center;
+  font-size: 12px;
+
+  & h2 {
+    color: white;
+    padding: 10px;
+  }
+  
+  span {
+    margin-top: 15px;
+    padding: 5px;
+  }
 }
 
 #words-container {
@@ -323,6 +335,10 @@ word{
   &.marked {
     border-color: var(--red);
   }
+
+  &.current-word {
+    color: var(--white);
+  }
 }
 
 letter {
@@ -333,6 +349,18 @@ letter {
   &.incorrect {
     color: var(--red);
   }
+}
+
+.correct {
+  color: var(--green);
+}
+
+.incorrect {
+  color: var(--red);
+}
+
+.default-color {
+  color: white;
 }
 
 #time{
@@ -356,6 +384,7 @@ letter {
   margin-left: 15px;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .input-row {
@@ -378,6 +407,11 @@ input, button {
   &:focus {
     outline: none; 
   }
+}
+
+#typing-test-language{
+  border-radius: 10px;
+  color: var(--light-green);
 }
 
 @media screen and (max-width: 1600px) {

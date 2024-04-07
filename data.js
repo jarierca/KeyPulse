@@ -1,4 +1,4 @@
-export const words_en = [
+const words_en = [
   "a",
   "ability",
   "able",
@@ -1001,7 +1001,7 @@ export const words_en = [
   "yourself"
 ];
 
-export const words_es = [
+const words_es = [
   "De",
   "Que",
   "En",
