@@ -1,4 +1,4 @@
-# Typing Test App
+# KeyPulse 
 
 ## Description
 This is a web application that provides two main features:
