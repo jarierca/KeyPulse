@@ -300,13 +300,19 @@ a {
   font-size: 12px;
 
   & h2 {
-    color: white;
+    color: var(--grey);
     padding: 10px;
   }
   
+  div {
+    background-color: var(--dark-header);
+    border-radius: 10px;
+    display: flex;
+    margin-top: 20px;
+  }  
+
   span {
-    margin-top: 15px;
-    padding: 5px;
+    padding-left: 5px;
   }
 }
 
@@ -362,6 +368,10 @@ letter {
 
 .default-color {
   color: white;
+}
+
+.grey-color {
+  color: var(--grey);
 }
 
 #time{

@@ -8,6 +8,7 @@ let soundEnabled = true;
 let keyboadDetectionEnabled = true;
 let typinTestStarted = false;
 
+var intervalId;
 const initialTime = 30;
 var words = "";
 const time = document.getElementById('time');
@@ -184,10 +185,11 @@ function loadTypingTest() {
   
   numKeyStrokes = 0;
 
+  results.style = "";
   results.display = "none";
 
   typingInput.value = "";
-  typingInput.disable = false;
+  typingInput.disabled = false;
   typingInput.addEventListener('keyup', checkWord)
 
   currentTime = initialTime;
@@ -215,10 +217,17 @@ function loadTypingTest() {
   firstWord.querySelector('letter').classList.add('current-letter')
 }
 
+function reloadTypingTest(){
+
+  clearInterval(intervalId);
+
+  loadTypingTest();
+}
+
 function initTypingTest() {
   typinTestStarted = true;
 
-  const intervalId = setInterval(() => {
+  intervalId = setInterval(() => {
       currentTime--
       time.textContent = currentTime
 
@@ -298,12 +307,19 @@ function endTest(){
   const totalLetters = correctLetter + incorrectLetter
 
   wpm.textContent = numCorrectWords * 60 / initialTime;
-  
+  wpm.classList.add('default-color');  
 
   keyStrokes.textContent = numKeyStrokes;
+  keyStrokes.classList.add('default-color');
+  
+  var leftBracketLetterSpan = document.createElement("span");
+  leftBracketLetterSpan.classList.add('default-color');
+  leftBracketLetterSpan.textContent = "(";
+
+  keyStrokes.appendChild(leftBracketLetterSpan);
 
   var correctLetterSpan = document.createElement("span");
-  correctLetterSpan.textContent = " ( " + correctLetter;
+  correctLetterSpan.textContent = correctLetter;
   correctLetterSpan.classList.add('correct');
 
   keyStrokes.appendChild(correctLetterSpan);
@@ -315,14 +331,22 @@ function endTest(){
   keyStrokes.appendChild(slashLetterSpan);
 
   var incorrectLetterSpan = document.createElement("span");
-  incorrectLetterSpan.textContent = incorrectLetter + " )";
+  incorrectLetterSpan.textContent = incorrectLetter;
   incorrectLetterSpan.classList.add('incorrect');
 
   keyStrokes.appendChild(incorrectLetterSpan);
 
+  var rightBracketLetterSpan = document.createElement("span");
+  rightBracketLetterSpan.classList.add('default-color');
+  rightBracketLetterSpan.textContent = ")";
+
+  keyStrokes.appendChild(rightBracketLetterSpan);
 
   accuracy.textContent = (totalLetters > 0 ? ((correctLetter / totalLetters) * 100).toFixed(2) : 0) + "%";
+  accuracy.classList.add('default-color'); 
+
   correctWords.textContent = numCorrectWords;
   wrongWords.textContent = numWrongWords;
+  wrongWords.classList.add('incorrect');
 }
 
