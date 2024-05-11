@@ -65,27 +65,30 @@ window.addEventListener('keydown', function(event) {
       key.classList.add('active');
       key.classList.add("actived");
 
-      if (soundEnabled) {
-        audio.currentTime = 0;
-        audio.play();     
-      }
-
       setTimeout(function() {
             key.classList.remove("actived");
           }, 100);
 
-      var addNewKey = document.createElement("span");
-      addNewKey.title = event.keyCode;
-      addNewKey.textContent = `${event.key} (${event.keyCode})`;
-      addNewKey.classList.add('key-pressed');
-      keyPressed.insertBefore(addNewKey, keyPressed.firstChild);
-
-      event.preventDefault();
 
     } else if(!keyboadDetectionEnabled && !typinTestStarted){
       initTypingTest();
     }
   });
+
+  if(keyboadDetectionEnabled){
+    if (soundEnabled) {
+      audio.currentTime = 0;
+      audio.play();     
+    }
+
+    var addNewKey = document.createElement("span");
+    addNewKey.title = event.keyCode;
+    addNewKey.textContent = `${event.key} (${event.keyCode})`;
+    addNewKey.classList.add('key-pressed');
+    keyPressed.insertBefore(addNewKey, keyPressed.firstChild);
+
+    event.preventDefault();
+  }
 });
 
 window.addEventListener('keyup', function(event) {
